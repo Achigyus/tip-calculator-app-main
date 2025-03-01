@@ -279,6 +279,7 @@ input[type=number] {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10.18rem 0;
   }
   .container {
     max-inline-size: 57.5rem;
