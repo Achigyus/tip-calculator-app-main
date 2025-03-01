@@ -35,59 +35,62 @@
       <div class="tip_calc_wrap">
         <form class="tip_calc_top">
           <div class="tip_calc_bill">
-            <label for="bill" class="tip_calc_label">Bill</label>
-            <input type="number" name="bill" id="bill" min="0">
+            <label for="bill" class="tip_calc_label fw700">Bill</label>
+            <input type="number" name="bill" id="bill" min="0" class="generic fw700" placeholder="0">
           </div>
 
           <div class="tip_calc_tip_selector">
-            <label for="tip_selector" class="tip_calc_label">Select Tip %</label>
-            <input type="button" value="5%" class="tip_selector">
-            <input type="button" value="10%" class="tip_selector">
-            <input type="button" value="15%" class="tip_selector">
-            <input type="button" value="25%" class="tip_selector">
-            <input type="button" value="50%" class="tip_selector">
-            <input type="number" name="custom_tip" id="custom_tip" class="tip_selector" min="0" step="1">
+            <label for="tip_selector" class="tip_calc_label fw700">Select Tip %</label>
+            <div class="tip_selector_wrap">
+              <input type="button" value="5%" class="tip_selector fw700">
+              <input type="button" value="10%" class="tip_selector fw700">
+              <input type="button" value="15%" class="tip_selector fw700">
+              <input type="button" value="25%" class="tip_selector fw700">
+              <input type="button" value="50%" class="tip_selector fw700">
+              <input type="number" name="custom_tip" id="custom_tip" class="tip_selector fw700" min="0" step="1" placeholder="Custom">
+            </div>
           </div>
 
-          <div class="tip_calc_people">
+          <div class="tip_calc_people" id="tip_calc_error">
             <div class="tip_calc_people_label_error">
-              <label for="people" class="tip_calc_label">Number of People</label>
-              <p class="tip_calc_error" id="tip_calc_error">Can't be zero</p>
+              <label for="people" class="tip_calc_label fw700">Number of People</label>
+              <p class="tip_calc_error fw700">Can't be zero</p>
             </div>
-            <input type="number" name="people" id="people" min="1">
+            <input type="number" name="people" id="people" min="1" class="generic fw700" placeholder="0">
           </div>
         </form>
 
         <div class="tip_calc_bottom">
           <div class="tip_calc_tip_stats" id="tip_calc_tip_stats">
             <div class="tip_amount_per_person">
-              <div class="tip_amount_per_person_text">
+              <div class="tip_amount_per_person_text fw700">
                 <p>Tip Amount <span>/ person</span></p>
               </div>
 
-              <p class="tip_amount_per_person_value">$-.--</p>
+              <p class="tip_amount_per_person_value fw700">$0.00</p>
             </div>
 
             <div class="tip_amount_total">
-              <div class="tip_amount_total_text">
+              <div class="tip_amount_total_text fw700">
                 <p>Total <span>/ person</span></p>
               </div>
 
-              <p class="tip_amount_total_value">$-.--</p>
+              <p class="tip_amount_total_value fw700">$0.00</p>
             </div>
           </div>
 
           <div class="tip_calc_reset">
-            <button class="tip_calc_reset_btn" id="tip_calc_reset_btn">Reset</button>
+            <button class="tip_calc_reset_btn fw700" id="tip_calc_reset_btn" disabled>Reset</button>
           </div>
         </div>
       </div>
+    </div>
   </main>
 
   <footer>
-    <div class="attribution">
+    <div class="attribution fw700">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/Achigyus" target="_blank">Achigyus</a>.
     </div>
   </footer>
 

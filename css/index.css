@@ -37,11 +37,267 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-.tip_calc_error {
-  display: none;
-  color: red;
+.fw700 {
+  font-weight: 700;
 }
 
-.tip_calc_error.active {
+body {
+  background: #C5E4E7;
+  font-family: "Space Mono", monospace;
+}
+
+.main {
+  min-block-size: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 3.125rem;
+}
+
+.logo_container {
+  display: flex;
+  justify-content: center;
+  inline-size: 100%;
+}
+
+.tip_calc_wrap {
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 2rem 2.7rem rgba(79, 166, 175, 0.200735);
+  border-radius: 1.56rem 1.56rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tip_calc_people, .tip_calc_bill, .tip_calc_tip_selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+label {
+  font-size: 1rem;
+  color: #5E7A7D;
+  line-height: 1.5;
+}
+
+input {
+  cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.tip_calc_bill input, .tip_calc_people input {
+  border-radius: 0.31rem;
+  background: #F3F9FA;
+  padding: 0.375rem 1.125rem;
+  border: none;
+  font-size: 1.5rem;
+  color: #00474B;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.tip_calc_bill input {
+  background-image: url("../images/icon-dollar.svg");
+  background-position: 16px 16px;
+  background-repeat: no-repeat;
+}
+
+.tip_calc_bill input:focus-visible, .tip_calc_people input:focus-visible, .tip_selector_wrap input[type=number]:focus-visible {
+  outline: 2px solid #26C2AE;
+}
+
+.tip_calc_people input {
+  background-image: url("../images/icon-person.svg");
+  background-position: 16px 16px;
+  background-repeat: no-repeat;
+}
+
+.tip_selector_wrap {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 3rem);
+  padding-top: 0.625rem;
+}
+
+.tip_selector_wrap input[type=button] {
+  border-radius: 0.31rem;
+  background: #00474B;
+  padding: 0.375rem 1.125rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.tip_selector_wrap input[type=number] {
+  border-radius: 0.31rem;
+  background: #F3F9FA;
+  padding: 0.375rem 1.125rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #00474B;
+  border: none;
+  inline-size: 100%;
+  text-align: right;
+}
+
+.tip_calc_people_label_error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tip_calc_top {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+#tip_calc_error .tip_calc_error {
+  display: none;
+  color: #E17457;
+}
+
+#tip_calc_error.active .tip_calc_error {
   display: block;
+}
+
+#tip_calc_error.active input {
+  outline: 2px solid #E17052;
+}
+
+.tip_calc_bottom {
+  padding: 1.5rem;
+  background: #00474B;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  border-radius: 0.94rem;
+}
+
+.tip_calc_tip_stats {
+  display: flex;
+  gap: 1.25rem;
+  flex-direction: column;
+}
+
+.tip_amount_total, .tip_amount_per_person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tip_amount_total_text, .tip_amount_per_person_text {
+  color: #fff;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.tip_amount_total_text span, .tip_amount_per_person_text span {
+  display: block;
+  color: #7F9D9F;
+}
+
+.tip_amount_per_person_value, .tip_amount_total_value {
+  font-size: 2rem;
+  color: #26C2AE;
+  line-height: 1.5;
+  text-align: right;
+  letter-spacing: 0.042rem;
+}
+
+.tip_calc_reset_btn {
+  border-radius: 0.31rem;
+  background: #26C2AE;
+  padding: 0.63rem 2rem;
+  color: #00474B;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  text-align: center;
+  inline-size: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.tip_selector_wrap input[type=button]:hover, .tip_calc_reset_btn:hover {
+  background: #9FE8DF;
+  color: #00474B;
+}
+
+.tip_calc_reset_btn:disabled {
+  background: #0D686D;
+}
+
+.attribution {
+  padding: 0.63rem;
+  text-align: center;
+  color: #1C204B;
+}
+
+.attribution a {
+  color: #E17457;
+}
+
+@media screen and (min-width: 27.75rem) {
+  .tip_selector_wrap {
+    gap: 0.875rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 3rem);
+  }
+}
+@media screen and (min-width: 57.625rem) {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    max-inline-size: 57.5rem;
+    margin-inline: auto;
+    padding-top: 0;
+    gap: 5.4rem;
+  }
+  .tip_calc_wrap {
+    gap: 2rem;
+    flex-direction: row;
+    border-radius: 1.56rem;
+  }
+  .tip_calc_top, .tip_calc_bottom {
+    flex: 1 1 0;
+  }
+  .tip_calc_top {
+    padding: 1rem;
+  }
+  .tip_calc_bottom {
+    padding: 2.5rem;
+    justify-content: space-between;
+    max-inline-size: 25.81rem;
+  }
+  .tip_calc_tip_stats {
+    gap: 2.5rem;
+  }
+  .tip_amount_per_person_value, .tip_amount_total_value {
+    font-size: 3rem;
+  }
+  .tip_selector_wrap input[type=number], .tip_selector_wrap input[type=button] {
+    padding: 0.375rem 0.75rem;
+  }
 }

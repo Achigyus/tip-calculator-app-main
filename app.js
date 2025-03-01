@@ -33,6 +33,7 @@ function reset() {
     
     peopleError.classList.remove('active');
     renderTipStats(0.00, 0.00);
+    resetBtn.disabled = true;
 }
 
 
@@ -49,12 +50,14 @@ function calculateTip() {
 function handleInput(e) {
     updateTipData(e.target.name, e.target.value);
     handleError();
+    resetBtn.disabled = false;
 }
 
 function handleBtnClick(e) {
     if (e.target.matches('.tip_selector[type="button"]')) {
         updateTipData('custom_tip', e.target.value.replace('%', ''));
         handleError()
+        resetBtn.disabled = false;
     }
 }
 
