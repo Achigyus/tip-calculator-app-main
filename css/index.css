@@ -50,6 +50,17 @@ body {
   min-block-size: 100vh;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -285,6 +296,7 @@ input[type=number] {
   }
   .tip_calc_top {
     padding: 1rem;
+    gap: 2.5rem;
   }
   .tip_calc_bottom {
     padding: 2.5rem;
