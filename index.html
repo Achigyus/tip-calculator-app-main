@@ -36,7 +36,7 @@
         <form class="tip_calc_top">
           <div class="tip_calc_bill">
             <label for="bill" class="tip_calc_label">Bill</label>
-            <input type="number" name="bill" id="bill">
+            <input type="number" name="bill" id="bill" min="0">
           </div>
 
           <div class="tip_calc_tip_selector">
@@ -46,17 +46,20 @@
             <input type="button" value="15%" class="tip_selector">
             <input type="button" value="25%" class="tip_selector">
             <input type="button" value="50%" class="tip_selector">
-            <input type="number" name="custom_tip" id="custom_tip" class="tip_selector">
+            <input type="number" name="custom_tip" id="custom_tip" class="tip_selector" min="0" step="1">
           </div>
 
           <div class="tip_calc_people">
-            <label for="people" class="tip_calc_label">Number of People</label>
-            <input type="number" name="people" id="people">
+            <div class="tip_calc_people_label_error">
+              <label for="people" class="tip_calc_label">Number of People</label>
+              <p class="tip_calc_error" id="tip_calc_error">Can't be zero</p>
+            </div>
+            <input type="number" name="people" id="people" min="1">
           </div>
         </form>
 
         <div class="tip_calc_bottom">
-          <div class="tip_calc_tip_stats">
+          <div class="tip_calc_tip_stats" id="tip_calc_tip_stats">
             <div class="tip_amount_per_person">
               <div class="tip_amount_per_person_text">
                 <p>Tip Amount <span>/ person</span></p>
@@ -75,7 +78,7 @@
           </div>
 
           <div class="tip_calc_reset">
-            <input type="button" value="Reset" class="reset_button">
+            <button class="tip_calc_reset_btn" id="tip_calc_reset_btn">Reset</button>
           </div>
         </div>
       </div>

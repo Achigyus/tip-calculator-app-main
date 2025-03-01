@@ -36,3 +36,12 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+
+.tip_calc_error {
+  display: none;
+  color: red;
+}
+
+.tip_calc_error.active {
+  display: block;
+}
